@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Placement Preparation System</h1>
+
+        <h2>Welcome {{ name }} 👋</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>📚 Aptitude</h2>
+                <p>Practice aptitude questions</p>
+                <button>Aptitude</button>
+                <a href="/quiz">
+    <button>Start Test</button>
+</a>
+            </div>
+
+            <div class="card">
+                <h2>💻 Coding</h2>
+                <p>Practice Python programs</p>
+                <button>Coding</button>
+            </div>
+            <div class="card">
+                <h2>🎤 Interview</h2>
+                <p>Prepare interview questions</p>
+                <button>Interview</button>
+            </div>
+
+            <div class="card">
+                <h2>📝 Mock Test</h2>
+                <p>Take a placement test</p>
+                <button>Start Test</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
