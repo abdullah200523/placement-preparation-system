@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>{{ name }} - Resume</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #eeeeee;
+            margin: 0;
+        }
+
+        .resume {
+            width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 15px #aaa;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1769aa;
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1769aa;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            margin: 5px;
+        }
+
+        .section {
+            margin-top: 25px;
+        }
+
+        .section h2 {
+            color: #1769aa;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .section p {
+            line-height: 1.6;
+        }
+
+        .skills {
+            line-height: 2;
+        }
+
+        .buttons {
+            text-align: center;
+            margin: 30px;
+        }
+
+        button {
+            background: #1769aa;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 5px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        @media print {
+
+            body {
+                background: white;
+            }
+
+            .buttons {
+                display: none;
+            }
+
+            .resume {
+                width: auto;
+                margin: 0;
+                box-shadow: none;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<div class="resume">
+
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <h1>{{ name }}</h1>
+
+        <p>📧 {{ email }}</p>
+
+        <p>📞 {{ phone }}</p>
+
+        <p>📍 {{ location }}</p>
+
+    </div>
+
+
+    <!-- OBJECTIVE -->
+
+    <div class="section">
+
+        <h2>🎯 Career Objective</h2>
+
+        <p>
+            {{ objective }}
+        </p>
+
+    </div>
+
+
+    <!-- EDUCATION -->
+
+    <div class="section">
+
+        <h2>🎓 Education</h2>
+
+        <p>
+            <b>{{ education }}</b>
+        </p>
+
+        <p>
+            {{ college }}
+        </p>
+
+        <p>
+            Year: {{ year }}
+            |
+            {{ percentage }}
+        </p>
+
+    </div>
+
+
+    <!-- SKILLS -->
+
+    <div class="section">
+
+        <h2>💻 Technical Skills</h2>
+
+        <p class="skills">
+            {{ skills }}
+        </p>
+
+    </div>
+
+
+    <!-- PROJECT -->
+
+    <div class="section">
+
+        <h2>🚀 Project</h2>
+
+        <p>
+            <b>{{ project }}</b>
+        </p>
+
+        <p>
+            {{ project_description }}
+        </p>
+
+        <p>
+            <b>Technologies:</b>
+            {{ technologies }}
+        </p>
+
+    </div>
+
+
+    <!-- INTERNSHIP -->
+
+    {% if internship %}
+
+    <div class="section">
+
+        <h2>💼 Internship / Experience</h2>
+
+        <p>
+            <b>{{ internship }}</b>
+        </p>
+
+        <p>
+            <b>Role:</b>
+            {{ internship_role }}
+        </p>
+
+        <p>
+            {{ internship_description }}
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- CERTIFICATIONS -->
+
+    {% if certifications %}
+
+    <div class="section">
+
+        <h2>🏆 Certifications</h2>
+
+        <p>
+            {{ certifications }}
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- LANGUAGES -->
+
+    {% if languages %}
+
+    <div class="section">
+
+        <h2>🌐 Languages</h2>
+
+        <p>
+            {{ languages }}
+        </p>
+
+    </div>
+
+    {% endif %}
+
+
+    <!-- PROFILES -->
+
+    {% if linkedin or github %}
+
+    <div class="section">
+
+        <h2>🔗 Online Profiles</h2>
+
+        {% if linkedin %}
+
+        <p>
+            <b>LinkedIn:</b> {{ linkedin }}
+        </p>
+
+        {% endif %}
+
+
+        {% if github %}
+
+        <p>
+            <b>GitHub:</b> {{ github }}
+        </p>
+
+        {% endif %}
+
+    </div>
+
+    {% endif %}
+
+
+</div>
+
+
+<div class="buttons">
+
+    <button onclick="window.print()">
+        🖨️ Print / Save as PDF
+    </button>
+
+    <a href="/resume">
+        <button>
+            ✏️ Edit Resume
+        </button>
+    </a>
+
+    <a href="/dashboard">
+        <button>
+            🏠 Dashboard
+        </button>
+    </a>
+
+</div>
+
+
+</body>
+
+</html>

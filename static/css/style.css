@@ -1,61 +1,894 @@
+
+```css
+/* ================================
+   GLOBAL TEXT STYLE
+================================ */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f6ff;
-    text-align: center;
-    margin: 0;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    min-height: 100vh;
+
+    color: #111827;
+
+    font-weight: 600;
+
+    background:
+        radial-gradient(circle at top left,
+            #dbeafe 0%,
+            transparent 35%),
+
+        radial-gradient(circle at top right,
+            #fce7f3 0%,
+            transparent 35%),
+
+        radial-gradient(circle at bottom left,
+            #dcfce7 0%,
+            transparent 35%),
+
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #eef4ff,
+            #faf5ff
+        );
+
+    background-attachment: fixed;
 }
 
-.container {
-    margin-top: 120px;
+
+/* ================================
+   ALL HEADINGS
+================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000000;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    font-weight: 800;
+
+    letter-spacing: 0.5px;
 }
 
-h1 {
-    color: #1769aa;
+
+/* MAIN TITLE */
+
+.container h1 {
+    color: #000000;
+
     font-size: 40px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.15);
 }
 
-h2 {
-    color: #333;
+
+/* WELCOME TEXT */
+
+.container h2 {
+    color: #111111;
+
+    font-size: 24px;
+
+    font-weight: 800;
 }
+
+
+/* ================================
+   NORMAL TEXT
+================================ */
 
 p {
-    font-size: 18px;
-    color: #666;
+    color: #1f2937;
+
+    font-weight: 600;
+
+    line-height: 1.6;
 }
 
-button {
-    background-color: #1769aa;
-    color: white;
-    border: none;
-    padding: 14px 30px;
+
+/* ================================
+   CARD TEXT
+================================ */
+
+.card h2 {
+    color: #000000;
+
+    font-size: 25px;
+
+    font-weight: 900;
+}
+
+.card p {
+    color: #222222;
+
     font-size: 16px;
-    border-radius: 6px;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   PAGE TITLE
+================================ */
+
+.page h1 {
+    color: #000000;
+
+    font-size: 32px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+
+/* ================================
+   QUESTION TEXT
+================================ */
+
+.question h3 {
+    color: #000000;
+
+    font-size: 19px;
+
+    font-weight: 800;
+}
+
+.question label {
+    color: #111111;
+
+    font-weight: 600;
+
+    font-size: 16px;
+}
+
+.question label:hover {
+    color: #000000;
+
+    font-weight: 800;
+}
+
+
+/* ================================
+   COMPANY PREPARATION
+================================ */
+
+.company-card h2 {
+    color: #000000;
+
+    font-size: 24px;
+
+    font-weight: 900;
+}
+
+.company-card p {
+    color: #222222;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+.login-box h1 {
+    color: #000000;
+
+    font-size: 32px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.login-box p {
+    color: #333333;
+
+    font-weight: 600;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.login-box input {
+    color: #000000;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    font-weight: 600;
+}
+
+.login-box input::placeholder {
+    color: #555555;
+
+    font-weight: 500;
+}
+
+
+/* ================================
+   BUTTON TEXT
+================================ */
+
+button {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* ================================
+   LINKS
+================================ */
+
+a {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+
+    font-weight: 800;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    color: #222;
+
+    background:
+        radial-gradient(circle at top left,
+            #dbeafe 0%,
+            transparent 35%),
+
+        radial-gradient(circle at top right,
+            #fce7f3 0%,
+            transparent 35%),
+
+        radial-gradient(circle at bottom left,
+            #dcfce7 0%,
+            transparent 35%),
+
+        linear-gradient(
+            135deg,
+            #f8fbff,
+            #eef4ff,
+            #faf5ff
+        );
+
+    background-attachment: fixed;
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+.login-container {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+.login-box {
+    width: 420px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(15px);
+
+    animation: loginAnimation 0.8s ease;
+}
+
+.login-box h1 {
+    color: #4f46e5;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+}
+
+.login-box p {
+    color: #666;
+
+    margin-bottom: 28px;
+
+    font-size: 15px;
+}
+
+
+/* ================================
+   INPUT
+================================ */
+
+.login-box input {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 18px;
+
+    border: 2px solid #e5e7eb;
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+    background: #f8fafc;
+}
+
+.login-box input:focus {
+    border-color: #6366f1;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.15);
+
+    transform: scale(1.02);
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+button {
+    background:
+        linear-gradient(135deg, #4f46e5, #7c3aed, #ec4899);
+
+    color: white;
+
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 12px;
+
     cursor: pointer;
+
+    margin: 6px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 8px 20px rgba(79, 70, 229, 0.35);
+
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    background-color: #0d4775;
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 12px 28px rgba(236, 72, 153, 0.4);
 }
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.container {
+    width: 92%;
+
+    max-width: 1200px;
+
+    margin: 50px auto;
+
+    text-align: center;
+}
+
+.container h1 {
+    color: white;
+
+    font-size: 42px;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.container h2 {
+    color: #e0e7ff;
+
+    margin-bottom: 40px;
+
+    font-weight: normal;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
 .cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 40px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 28px;
 }
 
 .card {
-    background: white;
-    width: 220px;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #ccc;
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.98),
+            rgba(238,242,255,0.95)
+        );
+
+    padding: 35px 25px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.22);
+
+    transition:
+        transform 0.35s,
+        box-shadow 0.35s;
+
+    overflow: hidden;
+}
+
+
+/* Colourful top line */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 6px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #4f46e5,
+            #7c3aed,
+            #ec4899,
+            #06b6d4
+        );
+}
+
+
+/* Glow */
+
+.card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    background: #c4b5fd;
+
+    border-radius: 50%;
+
+    right: -50px;
+    bottom: -50px;
+
+    opacity: 0.25;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.3);
 }
 
 .card h2 {
-    color: #1769aa;
+    color: #4f46e5;
+
+    margin-bottom: 15px;
+
+    font-size: 25px;
 }
 
-.card button {
-    margin-top: 10px;
+.card p {
+    color: #555;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+.page {
+    width: 92%;
+
+    max-width: 1050px;
+
+    margin: 40px auto;
+
+    background:
+        rgba(255,255,255,0.97);
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,0.25);
+
+    animation: pageAnimation 0.6s ease;
+}
+
+.page h1 {
+    text-align: center;
+
+    color: #4f46e5;
+
+    font-size: 32px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   QUESTIONS
+================================ */
+
+.question {
+    background:
+        linear-gradient(
+            135deg,
+            #eef2ff,
+            #fdf4ff
+        );
+
+    border-left: 6px solid #6366f1;
+
+    padding: 22px;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.question:hover {
+    transform: translateX(5px);
+
+    box-shadow:
+        0 8px 20px rgba(79,70,229,0.15);
+}
+
+.question h3 {
+    color: #4338ca;
+
+    margin-bottom: 18px;
+
+    font-size: 18px;
+}
+
+.question label {
+    display: block;
+
+    margin: 12px 0;
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.question label:hover {
+    background: #ddd6fe;
+
+    color: #4c1d95;
+}
+
+
+/* ================================
+   TEXTAREA
+================================ */
+
+textarea {
+    width: 100%;
+
+    height: 250px;
+
+    padding: 18px;
+
+    border: 2px solid #ddd;
+
+    border-radius: 14px;
+
+    font-family: Consolas, monospace;
+
+    font-size: 15px;
+
+    outline: none;
+
+    background: #0f172a;
+
+    color: #e2e8f0;
+
+    resize: vertical;
+
+    transition: 0.3s;
+}
+
+textarea:focus {
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 4px rgba(139,92,246,0.15);
+}
+
+
+/* ================================
+   LINKS
+================================ */
+
+a {
+    text-decoration: none;
+
+    color: #4f46e5;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ec4899;
+}
+
+
+/* ================================
+   RESULT / SUCCESS
+================================ */
+
+.success {
+    background:
+        linear-gradient(
+            135deg,
+            #dcfce7,
+            #d1fae5
+        );
+
+    color: #166534;
+
+    padding: 20px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    margin: 20px 0;
+
+    box-shadow:
+        0 8px 20px rgba(22,101,52,0.15);
+}
+
+
+/* ================================
+   COMPANY CARDS
+================================ */
+
+.company-card {
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eef2ff
+        );
+
+    padding: 25px;
+
+    margin: 18px 0;
+
+    border-radius: 16px;
+
+    border-left: 6px solid #7c3aed;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+
+    border-left-color: #ec4899;
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.18);
+}
+
+.company-card h2 {
+    color: #4f46e5;
+
+    margin-bottom: 10px;
+}
+
+.company-card p {
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   BACK BUTTON
+================================ */
+
+.back-button {
+    display: inline-block;
+
+    background:
+        linear-gradient(
+            135deg,
+            #64748b,
+            #334155
+        );
+
+    color: white;
+
+    padding: 12px 22px;
+
+    border-radius: 10px;
+
+    margin-top: 20px;
+
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    color: white;
+
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #475569,
+            #1e293b
+        );
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes loginAnimation {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes pageAnimation {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+
+    .cards {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .container h1 {
+        font-size: 34px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .login-box {
+        width: 100%;
+
+        padding: 30px 20px;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
+
+    .page {
+        width: 95%;
+
+        padding: 22px;
+    }
 }

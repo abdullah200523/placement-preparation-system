@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Create Resume</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+
+        .resume-form {
+            max-width: 800px;
+            margin: 30px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #ccc;
+            text-align: left;
+        }
+
+        .resume-form h2 {
+            color: #1769aa;
+            border-bottom: 2px solid #1769aa;
+            padding-bottom: 8px;
+            margin-top: 25px;
+        }
+
+        .resume-form input,
+        .resume-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .resume-form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .resume-form label {
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>📄 Resume Builder</h1>
+
+    <p>Create your professional placement resume</p>
+
+
+    <form action="/resume" method="POST">
+
+        <div class="resume-form">
+
+
+            <!-- PERSONAL DETAILS -->
+
+            <h2>👤 Personal Details</h2>
+
+            <label>Full Name</label>
+
+            <input type="text"
+                   name="name"
+                   placeholder="Enter your full name"
+                   required>
+
+
+            <label>Email</label>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Enter your email"
+                   required>
+
+
+            <label>Phone Number</label>
+
+            <input type="text"
+                   name="phone"
+                   placeholder="Enter your phone number"
+                   required>
+
+
+            <label>Location</label>
+
+            <input type="text"
+                   name="location"
+                   placeholder="City, State"
+                   required>
+
+
+            <!-- CAREER OBJECTIVE -->
+
+            <h2>🎯 Career Objective</h2>
+
+            <textarea name="objective"
+                      placeholder="Write your career objective..."
+                      required></textarea>
+
+
+            <!-- EDUCATION -->
+
+            <h2>🎓 Education</h2>
+
+            <label>Degree</label>
+
+            <input type="text"
+                   name="education"
+                   placeholder="Example: B.Com Computer Applications"
+                   required>
+
+
+            <label>College / University</label>
+
+            <input type="text"
+                   name="college"
+                   placeholder="Enter college name"
+                   required>
+
+
+            <label>Graduation Year</label>
+
+            <input type="text"
+                   name="year"
+                   placeholder="Example: 2027"
+                   required>
+
+
+            <label>Percentage / CGPA</label>
+
+            <input type="text"
+                   name="percentage"
+                   placeholder="Example: 8.2 CGPA"
+                   required>
+
+
+            <!-- SKILLS -->
+
+            <h2>💻 Technical Skills</h2>
+
+            <textarea name="skills"
+                      placeholder="Example: Python, HTML, CSS, JavaScript, SQL"
+                      required></textarea>
+
+
+            <!-- PROJECT -->
+
+            <h2>🚀 Projects</h2>
+
+            <label>Project Name</label>
+
+            <input type="text"
+                   name="project"
+                   placeholder="Example: Placement Preparation System"
+                   required>
+
+
+            <label>Project Description</label>
+
+            <textarea name="project_description"
+                      placeholder="Describe your project..."
+                      required></textarea>
+
+
+            <label>Technologies Used</label>
+
+            <input type="text"
+                   name="technologies"
+                   placeholder="Example: Python, Flask, HTML, CSS"
+                   required>
+
+
+            <!-- INTERNSHIP -->
+
+            <h2>💼 Internship / Experience</h2>
+
+            <label>Company Name</label>
+
+            <input type="text"
+                   name="internship"
+                   placeholder="Enter company name">
+
+
+            <label>Role</label>
+
+            <input type="text"
+                   name="internship_role"
+                   placeholder="Example: Intern">
+
+
+            <label>Work Description</label>
+
+            <textarea name="internship_description"
+                      placeholder="Describe your internship work..."></textarea>
+
+
+            <!-- CERTIFICATIONS -->
+
+            <h2>🏆 Certifications</h2>
+
+            <textarea name="certifications"
+                      placeholder="Example:
+Python Programming - Coursera
+SQL Basics - Udemy
+Web Development - Great Learning"></textarea>
+
+
+            <!-- LANGUAGES -->
+
+            <h2>🌐 Languages</h2>
+
+            <input type="text"
+                   name="languages"
+                   placeholder="Example: English, Tamil, Hindi">
+
+
+            <!-- LINKS -->
+
+            <h2>🔗 Online Profiles</h2>
+
+            <label>LinkedIn</label>
+
+            <input type="text"
+                   name="linkedin"
+                   placeholder="LinkedIn profile">
+
+
+            <label>GitHub</label>
+
+            <input type="text"
+                   name="github"
+                   placeholder="GitHub profile">
+
+
+            <br>
+
+            <button type="submit">
+                📄 Generate Resume
+            </button>
+
+        </div>
+
+    </form>
+
+
+    <br>
+
+    <a href="/dashboard">
+        <button>⬅ Back to Dashboard</button>
+    </a>
+
+</div>
+
+</body>
+
+</html>

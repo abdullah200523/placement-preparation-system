@@ -2,137 +2,647 @@
 <html>
 
 <head>
-    <title>Aptitude Quiz</title>
+    <title>Mock Test</title>
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .question {
+            background: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 700px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px #ccc;
+            text-align: left;
+        }
+
+        .question label {
+            display: block;
+            margin: 10px;
+            font-size: 17px;
+        }
+
+        #timer {
+            position: sticky;
+            top: 10px;
+            background: #1769aa;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            width: 150px;
+            margin: auto;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <h1>Aptitude Quiz 📝</h1>
+    <h1>📝 Placement Mock Test</h1>
 
-    <form action="/result" method="POST">
+    <p>Answer all 20 questions.</p>
+
+    <div id="timer">
+        Time: 10:00
+    </div>
+
+    <form action="/mock-result" method="POST" id="mockTest">
+
 
         <!-- Question 1 -->
-        <div class="card">
-            <h3>1. What is 10 + 20?</h3>
+        <div class="question">
+            <h3>1. What is 20 + 30?</h3>
 
-            <input type="radio" name="q1" value="20"> 20<br>
-            <input type="radio" name="q1" value="30"> 30<br>
-            <input type="radio" name="q1" value="40"> 40
+            <label>
+                <input type="radio" name="q1" value="40">
+                40
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="50">
+                50
+            </label>
+
+            <label>
+                <input type="radio" name="q1" value="60">
+                60
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 2 -->
-        <div class="card">
-            <h3>2. What is 5 × 5?</h3>
+        <div class="question">
+            <h3>2. What is 5 × 6?</h3>
 
-            <input type="radio" name="q2" value="20"> 20<br>
-            <input type="radio" name="q2" value="25"> 25<br>
-            <input type="radio" name="q2" value="30"> 30
+            <label>
+                <input type="radio" name="q2" value="25">
+                25
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="30">
+                30
+            </label>
+
+            <label>
+                <input type="radio" name="q2" value="35">
+                35
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 3 -->
-        <div class="card">
-            <h3>3. Which one is a programming language?</h3>
+        <div class="question">
+            <h3>3. Which language is used for web page structure?</h3>
 
-            <input type="radio" name="q3" value="Python"> Python<br>
-            <input type="radio" name="q3" value="HTML"> HTML<br>
-            <input type="radio" name="q3" value="CSS"> CSS
+            <label>
+                <input type="radio" name="q3" value="Python">
+                Python
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="HTML">
+                HTML
+            </label>
+
+            <label>
+                <input type="radio" name="q3" value="SQL">
+                SQL
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 4 -->
-        <div class="card">
+        <div class="question">
             <h3>4. What is 100 ÷ 10?</h3>
 
-            <input type="radio" name="q4" value="5"> 5<br>
-            <input type="radio" name="q4" value="10"> 10<br>
-            <input type="radio" name="q4" value="20"> 20
+            <label>
+                <input type="radio" name="q4" value="5">
+                5
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="10">
+                10
+            </label>
+
+            <label>
+                <input type="radio" name="q4" value="20">
+                20
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 5 -->
-        <div class="card">
-            <h3>5. What is 15% of 100?</h3>
+        <div class="question">
+            <h3>5. What is 25% of 100?</h3>
 
-            <input type="radio" name="q5" value="10"> 10<br>
-            <input type="radio" name="q5" value="15"> 15<br>
-            <input type="radio" name="q5" value="20"> 20
+            <label>
+                <input type="radio" name="q5" value="15">
+                15
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="25">
+                25
+            </label>
+
+            <label>
+                <input type="radio" name="q5" value="35">
+                35
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 6 -->
-        <div class="card">
-            <h3>6. If a = 10 and b = 20, what is a + b?</h3>
+        <div class="question">
+            <h3>6. What comes next? 2, 4, 6, 8, ?</h3>
 
-            <input type="radio" name="q6" value="20"> 20<br>
-            <input type="radio" name="q6" value="30"> 30<br>
-            <input type="radio" name="q6" value="40"> 40
+            <label>
+                <input type="radio" name="q6" value="9">
+                9
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="10">
+                10
+            </label>
+
+            <label>
+                <input type="radio" name="q6" value="12">
+                12
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 7 -->
-        <div class="card">
-            <h3>7. What is the next number? 2, 4, 6, 8, ?</h3>
+        <div class="question">
+            <h3>7. How many days are there in a week?</h3>
 
-            <input type="radio" name="q7" value="9"> 9<br>
-            <input type="radio" name="q7" value="10"> 10<br>
-            <input type="radio" name="q7" value="12"> 12
+            <label>
+                <input type="radio" name="q7" value="5">
+                5
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="7">
+                7
+            </label>
+
+            <label>
+                <input type="radio" name="q7" value="10">
+                10
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 8 -->
-        <div class="card">
-            <h3>8. A week has how many days?</h3>
+        <div class="question">
+            <h3>8. What is 50 - 25?</h3>
 
-            <input type="radio" name="q8" value="5"> 5<br>
-            <input type="radio" name="q8" value="6"> 6<br>
-            <input type="radio" name="q8" value="7"> 7
+            <label>
+                <input type="radio" name="q8" value="20">
+                20
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="25">
+                25
+            </label>
+
+            <label>
+                <input type="radio" name="q8" value="30">
+                30
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 9 -->
-        <div class="card">
-            <h3>9. What is 50 - 25?</h3>
+        <div class="question">
+            <h3>9. What is the square of 5?</h3>
 
-            <input type="radio" name="q9" value="15"> 15<br>
-            <input type="radio" name="q9" value="25"> 25<br>
-            <input type="radio" name="q9" value="35"> 35
+            <label>
+                <input type="radio" name="q9" value="20">
+                20
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="25">
+                25
+            </label>
+
+            <label>
+                <input type="radio" name="q9" value="30">
+                30
+            </label>
         </div>
 
-        <br>
 
         <!-- Question 10 -->
-        <div class="card">
-            <h3>10. What is the square of 5?</h3>
+        <div class="question">
+            <h3>10. Which one is a programming language?</h3>
 
-            <input type="radio" name="q10" value="20"> 20<br>
-            <input type="radio" name="q10" value="25"> 25<br>
-            <input type="radio" name="q10" value="30"> 30
+            <label>
+                <input type="radio" name="q10" value="Python">
+                Python
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="HTML">
+                HTML
+            </label>
+
+            <label>
+                <input type="radio" name="q10" value="CSS">
+                CSS
+            </label>
         </div>
 
-        <br>
+
+        <!-- Question 11 -->
+        <div class="question">
+            <h3>11. What does SQL work with?</h3>
+
+            <label>
+                <input type="radio" name="q11" value="Database">
+                Database
+            </label>
+
+            <label>
+                <input type="radio" name="q11" value="Keyboard">
+                Keyboard
+            </label>
+
+            <label>
+                <input type="radio" name="q11" value="Monitor">
+                Monitor
+            </label>
+        </div>
+
+
+        <!-- Question 12 -->
+        <div class="question">
+            <h3>12. What is 10 × 10?</h3>
+
+            <label>
+                <input type="radio" name="q12" value="50">
+                50
+            </label>
+
+            <label>
+                <input type="radio" name="q12" value="100">
+                100
+            </label>
+
+            <label>
+                <input type="radio" name="q12" value="110">
+                110
+            </label>
+        </div>
+
+
+        <!-- Question 13 -->
+        <div class="question">
+            <h3>13. Which symbol is used for comments in Python?</h3>
+
+            <label>
+                <input type="radio" name="q13" value="#">
+                #
+            </label>
+
+            <label>
+                <input type="radio" name="q13" value="//">
+                //
+            </label>
+
+            <label>
+                <input type="radio" name="q13" value="/*">
+                /*
+            </label>
+        </div>
+
+
+        <!-- Question 14 -->
+        <div class="question">
+            <h3>14. What is 15 + 15?</h3>
+
+            <label>
+                <input type="radio" name="q14" value="20">
+                20
+            </label>
+
+            <label>
+                <input type="radio" name="q14" value="30">
+                30
+            </label>
+
+            <label>
+                <input type="radio" name="q14" value="40">
+                40
+            </label>
+        </div>
+
+
+        <!-- Question 15 -->
+        <div class="question">
+            <h3>15. Which one is a database?</h3>
+
+            <label>
+                <input type="radio" name="q15" value="MySQL">
+                MySQL
+            </label>
+
+            <label>
+                <input type="radio" name="q15" value="HTML">
+                HTML
+            </label>
+
+            <label>
+                <input type="radio" name="q15" value="CSS">
+                CSS
+            </label>
+        </div>
+
+
+        <!-- Question 16 -->
+        <div class="question">
+            <h3>16. What is 9 × 9?</h3>
+
+            <label>
+                <input type="radio" name="q16" value="72">
+                72
+            </label>
+
+            <label>
+                <input type="radio" name="q16" value="81">
+                81
+            </label>
+
+            <label>
+                <input type="radio" name="q16" value="90">
+                90
+            </label>
+        </div>
+
+
+        <!-- Question 17 -->
+        <div class="question">
+            <h3>17. Which technology is used for styling web pages?</h3>
+
+            <label>
+                <input type="radio" name="q17" value="CSS">
+                CSS
+            </label>
+
+            <label>
+                <input type="radio" name="q17" value="SQL">
+                SQL
+            </label>
+
+            <label>
+                <input type="radio" name="q17" value="Python">
+                Python
+            </label>
+        </div>
+
+
+        <!-- Question 18 -->
+        <div class="question">
+            <h3>18. What is 100 - 40?</h3>
+
+            <label>
+                <input type="radio" name="q18" value="50">
+                50
+            </label>
+
+            <label>
+                <input type="radio" name="q18" value="60">
+                60
+            </label>
+
+            <label>
+                <input type="radio" name="q18" value="70">
+                70
+            </label>
+        </div>
+
+
+        <!-- Question 19 -->
+        <div class="question">
+            <h3>19. Which keyword defines a function in Python?</h3>
+
+            <label>
+                <input type="radio" name="q19" value="function">
+                function
+            </label>
+
+            <label>
+                <input type="radio" name="q19" value="def">
+                def
+            </label>
+
+            <label>
+                <input type="radio" name="q19" value="fun">
+                fun
+            </label>
+        </div>
+
+
+        <!-- Question 20 -->
+        <div class="question">
+            <h3>20. What is 12 + 8?</h3>
+
+            <label>
+                <input type="radio" name="q20" value="18">
+                18
+            </label>
+
+            <label>
+                <input type="radio" name="q20" value="20">
+                20
+            </label>
+
+            <label>
+                <input type="radio" name="q20" value="22">
+                22
+            </label>
+        </div>
+
+        <!-- Question 21 -->
+<div class="question">
+    <h3>21. A can do a work in 15 days and B in 20 days. If they work together for 4 days, what fraction of the work is left?</h3>
+
+    <label>
+        <input type="radio" name="q21" value="1/4">
+        1/4
+    </label>
+
+    <label>
+        <input type="radio" name="q21" value="1/10">
+        1/10
+    </label>
+
+    <label>
+        <input type="radio" name="q21" value="7/15">
+        7/15
+    </label>
+
+    <label>
+        <input type="radio" name="q21" value="8/15">
+        8/15
+    </label>
+</div>
+
+
+<!-- Question 22 -->
+<div class="question">
+    <h3>22. A can lay railway track in 16 days and B in 12 days. With help of C, they complete the work in 4 days. C alone can do the work in:</h3>
+
+    <label>
+        <input type="radio" name="q22" value="9 1/5 days">
+        9 1/5 days
+    </label>
+
+    <label>
+        <input type="radio" name="q22" value="9 2/5 days">
+        9 2/5 days
+    </label>
+
+    <label>
+        <input type="radio" name="q22" value="9 3/5 days">
+        9 3/5 days
+    </label>
+
+    <label>
+        <input type="radio" name="q22" value="10 days">
+        10 days
+    </label>
+</div>
+
+
+<!-- Question 23 -->
+<div class="question">
+    <h3>23. A, B and C can do a piece of work in 20, 30 and 60 days respectively. In how many days can A do the work if he is assisted by B and C on every third day?</h3>
+
+    <label>
+        <input type="radio" name="q23" value="12 days">
+        12 days
+    </label>
+
+    <label>
+        <input type="radio" name="q23" value="15 days">
+        15 days
+    </label>
+
+    <label>
+        <input type="radio" name="q23" value="16 days">
+        16 days
+    </label>
+
+    <label>
+        <input type="radio" name="q23" value="18 days">
+        18 days
+    </label>
+</div>
+
+
+<!-- Question 24 -->
+<div class="question">
+    <h3>24. A is thrice as good as B and is able to finish a job in 60 days less than B. Working together, they can do it in:</h3>
+
+    <label>
+        <input type="radio" name="q24" value="20 days">
+        20 days
+    </label>
+
+    <label>
+        <input type="radio" name="q24" value="22 1/2 days">
+        22 1/2 days
+    </label>
+
+    <label>
+        <input type="radio" name="q24" value="25 days">
+        25 days
+    </label>
+
+    <label>
+        <input type="radio" name="q24" value="30 days">
+        30 days
+    </label>
+</div>
+
+
+<!-- Question 25 -->
+<div class="question">
+    <h3>25. A alone can do a piece of work in 6 days and B alone in 8 days. A and B undertook to do it for Rs. 3200. With the help of C, they completed the work in 3 days. How much is to be paid to C?</h3>
+
+    <label>
+        <input type="radio" name="q25" value="Rs. 375">
+        Rs. 375
+    </label>
+
+    <label>
+        <input type="radio" name="q25" value="Rs. 400">
+        Rs. 400
+    </label>
+
+    <label>
+        <input type="radio" name="q25" value="Rs. 600">
+        Rs. 600
+    </label>
+
+    <label>
+        <input type="radio" name="q25" value="Rs. 800">
+        Rs. 800
+    </label>
+</div>
+
 
         <button type="submit">
-            Submit Quiz
+            Submit Mock Test
         </button>
 
     </form>
 
 </div>
+
+
+<script>
+
+let time = 600;
+
+let timer = setInterval(function() {
+
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    document.getElementById("timer").innerHTML =
+        "Time: " + minutes + ":" + seconds;
+
+    time--;
+
+    if (time < 0) {
+
+        clearInterval(timer);
+
+        alert("Time is over!");
+
+        document.getElementById("mockTest").submit();
+    }
+
+}, 1000);
+
+</script>
 
 </body>
 
